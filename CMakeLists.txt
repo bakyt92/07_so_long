@@ -6,9 +6,9 @@ set(CMAKE_C_STANDARD 99)
 add_executable(07_so_long so_long.c so_long.h)
 
 add_custom_target(
-        extern_lib
+        mlx.h
         COMMAND make
-        WORKING_DIRECTORY full_path to where Makefile is located
+        minilibx_macos
 )
 add_executable(minilibx_macos minilibx_macos/mlx_shaders.c minilibx_macos/mlx_new_window.m minilibx_macos/mlx_init_loop.m minilibx_macos/mlx_new_image.m minilibx_macos/mlx_xpm.c minilibx_macos/mlx_int_str_to_wordtab.c)
 target_link_libraries(minilibx_macos)
