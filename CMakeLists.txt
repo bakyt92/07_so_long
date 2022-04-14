@@ -3,4 +3,13 @@ project(07_so_long C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(07_so_long main.c)
+add_executable(07_so_long so_long.c so_long.h)
+
+add_custom_target(
+        extern_lib
+        COMMAND make
+        WORKING_DIRECTORY full_path to where Makefile is located
+)
+add_executable(minilibx_macos minilibx_macos/mlx_shaders.c minilibx_macos/mlx_new_window.m minilibx_macos/mlx_init_loop.m minilibx_macos/mlx_new_image.m minilibx_macos/mlx_xpm.c minilibx_macos/mlx_int_str_to_wordtab.c)
+target_link_libraries(minilibx_macos)
+add_dependencies(minilibx_macos mlx.h)
