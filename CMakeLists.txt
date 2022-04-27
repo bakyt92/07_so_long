@@ -3,7 +3,7 @@ project(07_so_long C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(07_so_long so_long.c so_long.h)
+add_executable(07_so_long so_long.c so_long.h src_so_long/ft_error.c src_so_long/ft_utils.c)
 
 add_custom_target(
         mlx.h
