@@ -9,10 +9,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 		ft_error("Wrong number of arguments");
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
-		ft_error("FD error");
-//	ft_check_arg(argv[1]);
+	ft_check_arg(argv[1], map);
 //	map = ft_parsing(argv);
 
 	return 0;

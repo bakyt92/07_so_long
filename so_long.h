@@ -9,10 +9,10 @@
 typedef struct s_map
 {
 	char	**map;
-
+	int		fd;
 } t_map;
 
 void	ft_error(char *str);
-void	ft_check_arg(char *str);
+void	ft_check_arg(char *str, t_map *map);
 
 #endif
