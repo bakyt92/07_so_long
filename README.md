@@ -14,3 +14,12 @@
 2. https://harm-smits.github.io/42docs/libs/minilibx
 3. На каждую ошибку должно быть объяснение. 
 4. 
+
+MAKEFILE
+https://www.youtube.com/watch?v=99ZrYs_ATH8   
+https://youtu.be/cIUKfGuPIu8  
+https://youtu.be/lPIH7JqfmSI  
+https://21-school-by-students.notion.site/makefile-38308edf82454e43923cc316a15022b3
+https://www.notion.so/Makefile-25e9e4c6b0a24784bcf3abe642c21130
+https://makefiletutorial.com/  
+https://www.gnu.org/software/make/manual/
