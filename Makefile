@@ -1,6 +1,7 @@
 NAME = so_long
 
 LIB = ./ft_libft/libft.a
+GNL = ./ft_get_next_line/get_next_line.a
 
 HEADER = so_long.h
 
@@ -16,14 +17,18 @@ OBJ = $(SRC:%.c= %.o)
 
 .PHONY : all clean fclean re
 
-all : libft $(NAME)
+all : libft get_next_line $(NAME)
 
 libft :
 	@MAKE -C ./ft_libft/
+	@MAKE bonus -C ./ft_libft/
+
+get_next_line :
+	@MAKE -C ./ft_get_next_line/
 
 $(NAME) : $(OBJ) $(HEADER)
 #	cd libft && make bonus && make
-	$(CC) $(FLAGS) -O2 $(OBJ) $(LIB) -o $(NAME)
+	$(CC) $(FLAGS) -O2 $(OBJ) $(LIB) $(GNL) -o $(NAME)
 
 # bonus : $(NAME_B)
 
@@ -38,6 +43,7 @@ clean	:
 #	cd libft && make clean
 	@rm -f $(OBJ)
 	@MAKE -C ./ft_libft/ clean
+	@MAKE -C ./ft_get_next_line/ clean
 #	@rm -f $(OBJ_B)
 
 fclean	:	clean
@@ -45,5 +51,6 @@ fclean	:	clean
 	@$(RM) $(NAME)
 	@$(RM) $(NAME_B)
 	@MAKE -C ./ft_libft/ fclean
+	@MAKE -C ./ft_get_next_line/ fclean
 
 re	:	fclean all
