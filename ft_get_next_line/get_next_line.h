@@ -18,10 +18,11 @@
 # include <fcntl.h>
 # include "../ft_libft/libft.h"
 
-char		*get_next_line(int fd);
-char		*ft_get_one_line(char *main_str);
-char		*ft_del_one_line(char *main_str);
-char		*ft_line_write(char *line, char *main_str);
+char	*get_next_line(int fd);
+char	*ft_get_one_line(char *main_str);
+char	*ft_del_one_line(char *main_str);
+char	*ft_line_write(char *line, char *main_str);
+char	*ft_gnl_strjoin(char *s1, char *s2);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42

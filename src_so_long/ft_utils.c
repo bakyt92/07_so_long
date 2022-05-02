@@ -16,6 +16,7 @@ void	ft_check_arg(char *str, t_map *map)
 		ft_error("The file is not '.ber' format");
 	if (open(str, O_DIRECTORY) > 0)
 		ft_error("It is directory");
+
 }
 
 char	*ft_get_line(t_map *map)
@@ -25,10 +26,13 @@ char	*ft_get_line(t_map *map)
 
 	new_line = ft_strdup("");
 	line = ft_strdup("");
+	printf("%s", "checkpoint_gnl_1 \n");
 	while (line)
 	{
 		line = get_next_line(map->fd);
+		printf("%s", "checkpoint_gnl_2 \n");
 		new_line = ft_strjoin(new_line, line);
+		printf("%s", "checkpoint_gnl_3 \n");
 		free(line);
 	}
 	close(map->fd);

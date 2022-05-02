@@ -86,17 +86,23 @@ char	*ft_read_text(int fd, char *str_main)
 	ssize_t	byte_read;
 	char	buf[BUFFER_SIZE + 1];
 
+	printf("%s", "checkpoint_gnl_2.1 \n");
+	printf("%s, %s", ft_strchr("BAKYT", 'A'), "NEWLINE \n");
+	printf("FD IS %d", fd);
+	printf("%s", "checkpoint_gnl_2.1.1 \n");
 	byte_read = 1;
 	while (!ft_strchr(str_main, '\n') && byte_read != 0)
 	{
+		printf("%s", "checkpoint_gnl_2.2 \n");
 		byte_read = read(fd, buf, BUFFER_SIZE);
+		printf("%s", "checkpoint_gnl_2.3 \n");
 		if (byte_read == -1)
 		{
 			free(str_main);
 			return (NULL);
 		}
 		buf[byte_read] = '\0';
-		str_main = ft_strjoin(str_main, buf);
+		str_main = ft_gnl_strjoin(str_main, buf);
 	}
 	return (str_main);
 }
@@ -106,13 +112,17 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*str_main;
 
+	printf("%s", "checkpoint_gnl_1.1 \n");
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (0);
 	str_main = ft_read_text(fd, str_main);
+	printf("%s", "checkpoint_gnl_1.2 \n");
 	if (!str_main)
 		return (NULL);
 	line = ft_get_one_line(str_main);
+	printf("%s", "checkpoint_gnl_1.3 \n");
 	str_main = ft_del_one_line(str_main);
+	printf("%s", "checkpoint_gnl_1.4 \n");
 	return (line);
 }
 /*
