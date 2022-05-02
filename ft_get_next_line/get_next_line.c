@@ -115,7 +115,7 @@ char	*get_next_line(int fd)
 	str_main = ft_del_one_line(str_main);
 	return (line);
 }
-
+/*
 int	main (void)
 {
 //	int fd;
@@ -140,3 +140,4 @@ int	main (void)
 
 	return (0);
 }
+*/

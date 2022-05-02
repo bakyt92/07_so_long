@@ -17,15 +17,15 @@ CFLAGS = -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(OBJ) $(HEADER)
-	$(CC) $(CFLAGS) -O2 $(OBJ) $(LIB) -o $(NAME)
+	ar rcs $(LIB) $(OBJ) $(NAME) $?
 
 %.o : %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
