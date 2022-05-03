@@ -10,14 +10,20 @@
 //#include "./ft_get_next_line/get_next_line.h"
 #include "./minilibx_macos/mlx.h"
 
-# define TILE_X 50
-# define TILE_Y 50
-# define WALL "damir/wall.xpm"
-# define FLOOR "damir/grass.xpm"
-# define PLAYER "damir/player.xpm"
-# define EXIT1 "damir/door.xpm"
-# define COL1 "damir/collect.xpm"
+# define TILE_X 64
+# define TILE_Y 64
+# define WALL "game_assets/wall.xpm"
+# define FLOOR "game_assets/back.xpm"
+# define PLAYER "game_assets/player1.xpm"
+# define EXIT1 "game_assets/exit.xpm"
+# define COL1 "game_assets/blue_crystal_0000.xpm"
 //# define COL2 "game_assets/blue_crystal_0001.png"
+
+typedef struct s_pl
+{
+	int		x;
+	int 	y;
+} t_pl;
 
 typedef struct s_image
 {
@@ -34,13 +40,14 @@ typedef struct s_map
 	char	**map;
 	char	*contents;
 	int		fd;
-	int 	width;
 	int 	length;
+	int 	height;
 	void	*mlx;
 	void	*window;
 	int 	col_num;
 	int 	steps;
 	void	*image1;
+	t_pl	player_pos;
 	t_image	img;
 } t_map;
 
@@ -54,7 +61,10 @@ void	ft_check_walls(t_map *map);
 void	ft_check_pce(t_map *map, int p, int c, int e);
 void	ft_check_symbols(t_map *map, char *str);
 void	ft_push_sprites(t_map *map);
-void	ft_push_image(t_map *map);
+void	ft_print_map(t_map *map);
+void	ft_push_image(t_map *map, int i, int j);
+void	ft_push_player(t_map *map);
+void	ft_moves(t_map *map);
 
 /* GNL_BAKYT */
 

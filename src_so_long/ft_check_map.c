@@ -53,16 +53,16 @@ void	ft_check_walls(t_map *map)
 	printf("%s", "checkpoint_walls_1 \n");
 	while (map->map[i])
 	{
-		if (map->map[i][0] == walls && map->map[i][map->width - 1] == walls)
+		if (map->map[i][0] == walls && map->map[i][map->length - 1] == walls)
 			i++;
 		else
 			ft_error("The map is not surrounded by walls");
 	}
 	j = 0;
 	printf("%s", "checkpoint_walls_2 \n");
-	while (map->map[map->length - 1][j])
+	while (map->map[map->height - 1][j])
 	{
-		if (map->map[map->length - 1][j] != walls)
+		if (map->map[map->height - 1][j] != walls)
 			ft_error("The map is not surrounded by walls");
 		j++;
 	}
