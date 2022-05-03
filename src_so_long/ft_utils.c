@@ -23,19 +23,25 @@ char	*ft_get_line(t_map *map)
 {
 	char	*line;
 	char	*new_line;
+	char	*tmp;
 
 	new_line = ft_strdup("");
 	line = ft_strdup("");
-	printf("%s", "checkpoint_gnl_1 \n");
+//	printf("%s", "checkpoint_gnl_1 \n");
 	while (line)
 	{
 		line = get_next_line(map->fd);
-		printf("%s", "checkpoint_gnl_2 \n");
+		if (!line)
+			break ;
+//		printf("%s \n", line);
+		tmp = new_line;
 		new_line = ft_strjoin(new_line, line);
-		printf("%s", "checkpoint_gnl_3 \n");
+//		printf("%s", "checkpoint_gnl_3 \n");
 		free(line);
+		free(tmp);
 	}
 	close(map->fd);
+//	printf("%s", new_line);
 	return (new_line);
 }
 
