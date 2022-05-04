@@ -15,6 +15,8 @@ SRC = so_long.c \
 		./src_so_long/ft_get_next_line.c \
 		./src_so_long/ft_check_map.c \
 		./src_so_long/ft_push_sprites.c \
+		./src_so_long/ft_moves1.c \
+		./src_so_long/ft_player_actions.c \
 		./src_so_long/ft_map_func1.c
 
 OBJ = $(SRC:%.c= %.o)

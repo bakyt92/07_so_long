@@ -28,8 +28,6 @@ void	ft_push_image(t_map *map, int i, int j)
 	{
 		mlx_put_image_to_window(map->mlx, map->window, map->img.floor,
 				j * TILE_X,i * TILE_Y);
-//		mlx_put_image_to_window(map->mlx, map->window, map->img.player,
-//				j * TILE_X,i * TILE_Y);
 		map->player_pos.x = j;
 		map->player_pos.y = i;
 	}
@@ -39,6 +37,7 @@ void	ft_push_image(t_map *map, int i, int j)
 								j * TILE_X,i * TILE_Y);
 		mlx_put_image_to_window(map->mlx, map->window, map->img.col1,
 				j * TILE_X,i * TILE_Y);
+		map->col_num++;
 	}
 	else if (map->map[i][j] == 'E')
 		mlx_put_image_to_window(map->mlx, map->window, map->img.exit,
@@ -51,7 +50,7 @@ void	ft_push_player(t_map *map)
 				 map->player_pos.x * TILE_X,map->player_pos.y * TILE_Y);
 }
 
-void	ft_print_map(t_map *map)
+int	ft_print_map(t_map *map)
 {
 	int	i;
 	int j;
@@ -70,5 +69,5 @@ void	ft_print_map(t_map *map)
 		i++;
 	}
 	ft_push_player(map);
-
+	return (0);
 }

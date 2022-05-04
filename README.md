@@ -15,6 +15,10 @@
 3. На каждую ошибку должно быть объяснение. 
 4. 
 
+Перечень keycode for MAC
+https://gist.github.com/rickyzhang82/8581a762c9f9fc6ddb8390872552c250
+
+
 MAKEFILE
 https://www.youtube.com/watch?v=99ZrYs_ATH8   
 https://youtu.be/cIUKfGuPIu8  

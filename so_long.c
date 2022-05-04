@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 																 * TILE_X, "so_long");
 	ft_push_sprites(map);
 	ft_print_map(map);
-//	ft_moves(map);
+	ft_moves(map);
 	mlx_loop(map->mlx);
 	return (0);
 }

@@ -17,7 +17,6 @@
 # define PLAYER "game_assets/player1.xpm"
 # define EXIT1 "game_assets/exit.xpm"
 # define COL1 "game_assets/blue_crystal_0000.xpm"
-//# define COL2 "game_assets/blue_crystal_0001.png"
 
 typedef struct s_pl
 {
@@ -40,7 +39,7 @@ typedef struct s_map
 	char	**map;
 	char	*contents;
 	int		fd;
-	int 	length;
+	int		length;
 	int 	height;
 	void	*mlx;
 	void	*window;
@@ -61,12 +60,23 @@ void	ft_check_walls(t_map *map);
 void	ft_check_pce(t_map *map, int p, int c, int e);
 void	ft_check_symbols(t_map *map, char *str);
 void	ft_push_sprites(t_map *map);
-void	ft_print_map(t_map *map);
+int		ft_print_map(t_map *map);
 void	ft_push_image(t_map *map, int i, int j);
 void	ft_push_player(t_map *map);
-void	ft_moves(t_map *map);
 
-/* GNL_BAKYT */
+/*ft_moves1.c*/
+int		ft_end_game(void);
+void	ft_moves(t_map *map);
+int		ft_press_key(int key, t_map *map);
+
+/*ft_player_actions.c*/
+void	ft_move_step(t_map *map, int x, int y);
+void	ft_player_move_up(t_map *map);
+void	ft_player_move_down(t_map *map);
+void	ft_player_move_left(t_map *map);
+void	ft_player_move_right(t_map *map);
+
+/* get_next_line_1 */
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
