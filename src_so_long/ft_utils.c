@@ -40,21 +40,21 @@ char	*ft_get_line(t_map *map)
 	while (read(map->fd, &c, 1) > 0)
 	{
 		tmp = line;
-		line = new_ft_strjoin(line, c);
+		line = ft_nouvel_strjoin(line, c);
 		free(tmp);
 	}
 	printf("%s", line);
 	return (line);
 }
 
-char	*new_ft_strjoin(char const *s1, char s2)
+char	*ft_nouvel_strjoin(char const *s1, char c)
 {
 	char	*str;
 	int		i;
 
 	i = 0;
-	str = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char) + 1);
-	if (!str || !s2)
+	str = (char *)malloc((ft_strlen(s1) + 2) * sizeof(char));
+	if (!str || !c)
 		return (NULL);
 	while (*s1)
 	{
@@ -62,7 +62,7 @@ char	*new_ft_strjoin(char const *s1, char s2)
 		i++;
 		s1++;
 	}
-	str[i] = s2;
+	str[i] = c;
 	i++;
 	str[i] = '\0';
 	return (str);

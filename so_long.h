@@ -92,6 +92,6 @@ void	ft_player_move_right(t_map *map);
 #  define BUFFER_SIZE 10
 # endif
 
-char	*new_ft_strjoin(char const *s1, char s2);
+char	*ft_nouvel_strjoin(char const *s1, char s2);
 
 #endif

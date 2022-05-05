@@ -17,7 +17,7 @@ int	ft_end_game(t_map *map)
 	int	i;
 
 	i = 0;
-	printf("GAME OVER!!!");
+	write(1, "GAME OVER!!!\n", ft_strlen("GAME OVER!!!\n"));
 	while (map->map[i])
 		free(map->map[i++]);
 	free(map->map);

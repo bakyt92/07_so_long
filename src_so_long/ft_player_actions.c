@@ -23,12 +23,6 @@ void	ft_move_step(t_map *map, int x, int y)
 	map->player_pos.x += x;
 	map->steps++;
 	printf("Num of steps: %d\n", map->steps);
-	printf("Num of diamonds: %d\n", map->col_num);
-	while (map->map[i])
-	{
-		printf("%s \n", map->map[i]);
-		i++;
-	}
 }
 
 void	ft_player_move_up(t_map *map)
