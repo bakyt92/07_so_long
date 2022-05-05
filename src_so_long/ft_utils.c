@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:44:40 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/05/05 23:57:27 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:19:55 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ char	*ft_get_line(t_map *map)
 	{
 		tmp = line;
 		line = new_ft_strjoin(line, c);
-//		printf("%c", c);
 		free(tmp);
 	}
 	printf("%s", line);
