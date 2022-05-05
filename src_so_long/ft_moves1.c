@@ -48,3 +48,13 @@ void	ft_moves(t_map *map)
 	mlx_hook(map->window, 17, 0, ft_end_game, map);
 	mlx_loop_hook(map->mlx, ft_print_map, map);
 }
+
+void	ft_print_steps(t_map *map)
+{
+	char *str;
+
+	write(1, "Number of steps: ", 17);
+	str = ft_itoa(map->steps);
+	write(1, str, ft_strlen(str));
+	write(1, "\n", 1);
+}

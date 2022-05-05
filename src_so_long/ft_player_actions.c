@@ -22,7 +22,7 @@ void	ft_move_step(t_map *map, int x, int y)
 	map->player_pos.y += y;
 	map->player_pos.x += x;
 	map->steps++;
-	printf("Num of steps: %d\n", map->steps);
+	ft_print_steps(map);
 }
 
 void	ft_player_move_up(t_map *map)
@@ -39,7 +39,7 @@ void	ft_player_move_up(t_map *map)
 				map->col_num == 0)
 	{
 		map->steps++;
-		printf("Num of steps: %d\n", map->steps);
+		ft_print_steps(map);
 		ft_end_game(map);
 	}
 }
@@ -58,7 +58,7 @@ void	ft_player_move_down(t_map *map)
 			map->col_num == 0)
 	{
 		map->steps++;
-		printf("Num of steps: %d\n", map->steps);
+		ft_print_steps(map);
 		ft_end_game(map);
 	}
 }
@@ -77,7 +77,7 @@ void	ft_player_move_left(t_map *map)
 			map->col_num == 0)
 	{
 		map->steps++;
-		printf("Num of steps: %d\n", map->steps);
+		ft_print_steps(map);
 		ft_end_game(map);
 	}
 }
@@ -96,7 +96,7 @@ void	ft_player_move_right(t_map *map)
 			map->col_num == 0)
 	{
 		map->steps++;
-		printf("Num of steps: %d\n", map->steps);
+		ft_print_steps(map);
 		ft_end_game(map);
 	}
 }

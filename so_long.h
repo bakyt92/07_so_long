@@ -93,5 +93,6 @@ void	ft_player_move_right(t_map *map);
 # endif
 
 char	*ft_nouvel_strjoin(char const *s1, char s2);
+void	ft_print_steps(t_map *map);
 
 #endif
