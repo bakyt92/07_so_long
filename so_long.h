@@ -6,21 +6,21 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:55:00 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/05/05 23:55:01 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/05/06 02:14:05 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
-#define SO_LONG_H
+# define SO_LONG_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
 
-#include "./ft_libft/libft.h"
+# include "./ft_libft/libft.h"
 //#include "./ft_get_next_line/get_next_line.h"
-#include "./minilibx_macos/mlx.h"
+# include "./minilibx_macos/mlx.h"
 
 # define TILE_X 64
 # define TILE_Y 64
@@ -32,9 +32,9 @@
 
 typedef struct s_pl
 {
-	int		x;
-	int 	y;
-} t_pl;
+	int	x;
+	int	y;
+}	t_pl;
 
 typedef struct s_image
 {
@@ -44,7 +44,7 @@ typedef struct s_image
 	void	*col1;
 	void	*col2;
 	void	*exit;
-} t_image;
+}	t_image;
 
 typedef struct s_map
 {
@@ -52,14 +52,14 @@ typedef struct s_map
 	char	*contents;
 	int		fd;
 	int		length;
-	int 	height;
+	int		height;
 	void	*mlx;
 	void	*window;
-	int 	col_num;
-	int 	steps;
+	int		col_num;
+	int		steps;
 	t_pl	player_pos;
 	t_image	img;
-} t_map;
+}	t_map;
 
 void	ft_error(char *str);
 char	*ft_get_line(t_map *map);
@@ -88,21 +88,10 @@ void	ft_player_move_left(t_map *map);
 void	ft_player_move_right(t_map *map);
 
 /* get_next_line_1 */
-
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
 
-//char	*get_next_line(int fd);
-//char	*ft_read(int fd, char *buf, char *str);
-
-//char	*ft_line_write(char *line, char *main_str);
-//char	*ft_del_one_line(char *main_str);
-//char	*ft_get_one_line(char *main_str);
-//char	*ft_read_text(int fd, char *str_main);
-//char	*get_next_line(int fd);
-
-char    *new_ft_strjoin(char const *s1, char s2);
-
+char	*new_ft_strjoin(char const *s1, char s2);
 
 #endif

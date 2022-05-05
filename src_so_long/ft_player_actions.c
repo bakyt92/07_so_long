@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:45:00 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/05/05 23:45:02 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/05/06 02:06:31 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_move_step(t_map *map, int x, int y)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	map->map[map->player_pos.y + y][map->player_pos.x + x] = 'P';
@@ -61,7 +61,7 @@ void	ft_player_move_down(t_map *map)
 		map->col_num--;
 	}
 	else if (map->map[map->player_pos.y + 1][map->player_pos.x] == 'E' &&
-			 map->col_num == 0)
+			map->col_num == 0)
 	{
 		map->steps++;
 		printf("Num of steps: %d\n", map->steps);
@@ -80,7 +80,7 @@ void	ft_player_move_left(t_map *map)
 		map->col_num--;
 	}
 	else if (map->map[map->player_pos.y][map->player_pos.x - 1] == 'E' &&
-			 map->col_num == 0)
+			map->col_num == 0)
 	{
 		map->steps++;
 		printf("Num of steps: %d\n", map->steps);
@@ -99,7 +99,7 @@ void	ft_player_move_right(t_map *map)
 		map->col_num--;
 	}
 	else if (map->map[map->player_pos.y][map->player_pos.x + 1] == 'E' &&
-			 map->col_num == 0)
+			map->col_num == 0)
 	{
 		map->steps++;
 		printf("Num of steps: %d\n", map->steps);

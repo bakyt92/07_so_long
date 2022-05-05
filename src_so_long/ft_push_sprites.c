@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:44:51 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/05/05 23:44:53 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/05/06 02:05:35 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_push_sprites(t_map *map)
 {
 	int	x;
-	int y;
+	int	y;
 
 	x = 64;
 	y = 64;
@@ -24,9 +24,7 @@ void	ft_push_sprites(t_map *map)
 	map->img.player = mlx_xpm_file_to_image(map->mlx, PLAYER, &x, &y);
 	map->img.exit = mlx_xpm_file_to_image(map->mlx, EXIT1, &x, &y);
 	map->img.col1 = mlx_xpm_file_to_image(map->mlx, COL1, &x, &y);
-//	map->img.col2 = mlx_png_file_to_image(map->mlx, COL2, &x, &y);
 	if (!map->img.wall || !map->img.floor || !map->img.player || !map->img.exit
-			|| !map->img.col1)
+		|| !map->img.col1)
 		ft_error("Picture error");
-//	map->img.col1 = map->img.col2;
 }

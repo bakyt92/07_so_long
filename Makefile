@@ -12,7 +12,6 @@ FLAGS = -Wall -Werror -Wextra
 SRC = so_long.c \
 		./src_so_long/ft_error.c \
 		./src_so_long/ft_utils.c \
-		./src_so_long/ft_get_next_line.c \
 		./src_so_long/ft_check_map.c \
 		./src_so_long/ft_push_sprites.c \
 		./src_so_long/ft_moves1.c \

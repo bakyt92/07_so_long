@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:54:24 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/05/05 23:54:25 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/05/06 02:02:58 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_check_symbols(t_map *map, char *str)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (map->map[i])
@@ -33,8 +33,8 @@ void	ft_check_symbols(t_map *map, char *str)
 
 void	ft_check_len(t_map *map)
 {
-	size_t len;
-	int	rows;
+	size_t	len;
+	int		rows;
 
 	len = ft_strlen(map->map[0]);
 	rows = 1;
@@ -48,43 +48,37 @@ void	ft_check_len(t_map *map)
 
 void	ft_check_walls(t_map *map)
 {
-	char	walls;
-	int 	i;
-	int 	j;
+	int		i;
+	int		j;
 
-	walls = '1';
 	i = 0;
 	j = 0;
-	printf("%s", "checkpoint_walls_0 \n");
 	while (map->map[i][j])
 	{
-		if (map->map[i][j] != walls)
+		if (map->map[i][j] != '1')
 			ft_error("The map is not surrounded by walls");
 		j++;
 	}
-	printf("%s", "checkpoint_walls_1 \n");
 	while (map->map[i])
 	{
-		if (map->map[i][0] == walls && map->map[i][map->length - 1] == walls)
+		if (map->map[i][0] == '1' && map->map[i][map->length - 1] == '1')
 			i++;
 		else
 			ft_error("The map is not surrounded by walls");
 	}
 	j = 0;
-	printf("%s", "checkpoint_walls_2 \n");
 	while (map->map[map->height - 1][j])
 	{
-		if (map->map[map->height - 1][j] != walls)
+		if (map->map[map->height - 1][j] != '1')
 			ft_error("The map is not surrounded by walls");
 		j++;
 	}
-	printf("%s", "checkpoint_walls_3 \n");
 }
 
 void	ft_check_pce(t_map *map, int p, int c, int e)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (map->map[i])
@@ -117,4 +111,3 @@ void	ft_check_map(t_map *map)
 	ft_check_pce(map, 0, 0, 0);
 	ft_check_symbols(map, "01PCE");
 }
-
