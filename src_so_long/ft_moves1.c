@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:45:06 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/05/06 02:07:11 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/05/06 02:41:39 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_moves(t_map *map)
 
 void	ft_print_steps(t_map *map)
 {
-	char *str;
+	char	*str;
 
 	write(1, "Number of steps: ", 17);
 	str = ft_itoa(map->steps);
