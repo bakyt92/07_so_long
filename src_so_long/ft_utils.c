@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/05 23:44:40 by ufitzhug          #+#    #+#             */
+/*   Updated: 2022/05/05 23:57:27 by ufitzhug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 void	ft_check_arg(char *str, t_map *map)
@@ -40,6 +52,8 @@ char	*ft_get_line(t_map *map)
 		free(line);
 		free(tmp);
 	}
+//	free(line);
+//	free(tmp);
 	close(map->fd);
 //	printf("%s", new_line);
 	return (new_line);
