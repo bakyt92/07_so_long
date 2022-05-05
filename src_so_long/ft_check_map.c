@@ -83,7 +83,11 @@ void	ft_check_pce(t_map *map, int p, int c, int e)
 			if (map->map[i][j] == 'C')
 				c++;
 			else if (map->map[i][j] == 'P')
+			{
 				p++;
+				map->player_pos.x = j;
+				map->player_pos.y = i;
+			}
 			else if (map->map[i][j] == 'E')
 				e++;
 			j++;

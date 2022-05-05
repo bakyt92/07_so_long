@@ -1,8 +1,17 @@
 #include "../so_long.h"
 
-int	ft_end_game(void)
+int	ft_end_game(t_map *map)
 {
+	int i;
+
+	i = 0;
 	printf("GAME OVER!!!");
+	while (map->map[i])
+		free(map->map[i++]);
+	free(map->map);
+	free(&map->player_pos);
+	free(&map->img);
+	free(map);
 	exit(EXIT_SUCCESS);
 	return (0);
 }
@@ -18,7 +27,7 @@ int	ft_press_key(int key, t_map *map)
 	else if (key == 2)
 		ft_player_move_right(map);
 	else if (key == 53)
-		ft_end_game();
+		ft_end_game(map);
 	ft_print_map(map);
 	return (0);
 }

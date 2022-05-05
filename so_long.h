@@ -45,7 +45,6 @@ typedef struct s_map
 	void	*window;
 	int 	col_num;
 	int 	steps;
-	void	*image1;
 	t_pl	player_pos;
 	t_image	img;
 } t_map;
@@ -65,7 +64,7 @@ void	ft_push_image(t_map *map, int i, int j);
 void	ft_push_player(t_map *map);
 
 /*ft_moves1.c*/
-int		ft_end_game(void);
+int		ft_end_game(t_map *map);
 void	ft_moves(t_map *map);
 int		ft_press_key(int key, t_map *map);
 

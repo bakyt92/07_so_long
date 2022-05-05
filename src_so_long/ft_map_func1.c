@@ -6,12 +6,12 @@ t_map	*ft_init_map(t_map *map)
 
 	rows = 0;
 	map->map = ft_split(map->contents, '\n');
+	free(map->contents);
 	while (map->map[rows])
 		rows++;
 	map->length = ft_strlen(map->map[0]);
 	map->height = rows;
 	ft_check_map(map);
-	map->col_num = 0;
 	map->steps = 0;
 	return(map);
 }
@@ -28,8 +28,6 @@ void	ft_push_image(t_map *map, int i, int j)
 	{
 		mlx_put_image_to_window(map->mlx, map->window, map->img.floor,
 				j * TILE_X,i * TILE_Y);
-		map->player_pos.x = j;
-		map->player_pos.y = i;
 	}
 	else if (map->map[i][j] == 'C')
 	{
@@ -56,8 +54,7 @@ int	ft_print_map(t_map *map)
 	int j;
 
 	i = 0;
-//	mlx_hook(map->window, 17, 0, game_over, 0);
-//	map->image1 = mlx_new_image(map->mlx, 60, 40);
+	map->col_num = 0;
 	while (map->map[i])
 	{
 		j = 0;
