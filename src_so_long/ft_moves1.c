@@ -21,8 +21,6 @@ int	ft_end_game(t_map *map)
 	while (map->map[i])
 		free(map->map[i++]);
 	free(map->map);
-	free(&map->player_pos);
-	free(&map->img);
 	free(map);
 	exit(EXIT_SUCCESS);
 	return (0);

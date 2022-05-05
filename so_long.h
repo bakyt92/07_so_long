@@ -93,7 +93,16 @@ void	ft_player_move_right(t_map *map);
 #  define BUFFER_SIZE 10
 # endif
 
-char	*get_next_line(int fd);
-char	*ft_read(int fd, char *buf, char *str);
+//char	*get_next_line(int fd);
+//char	*ft_read(int fd, char *buf, char *str);
+
+//char	*ft_line_write(char *line, char *main_str);
+//char	*ft_del_one_line(char *main_str);
+//char	*ft_get_one_line(char *main_str);
+//char	*ft_read_text(int fd, char *str_main);
+//char	*get_next_line(int fd);
+
+char    *new_ft_strjoin(char const *s1, char s2);
+
 
 #endif

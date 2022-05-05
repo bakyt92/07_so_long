@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
@@ -28,3 +29,6 @@ char	*ft_gnl_strjoin(char *s1, char *s2);
 #  define BUFFER_SIZE 42
 # endif
 #endif
+
+
+ */

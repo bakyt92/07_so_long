@@ -34,28 +34,56 @@ void	ft_check_arg(char *str, t_map *map)
 char	*ft_get_line(t_map *map)
 {
 	char	*line;
-	char	*new_line;
+	char 	c;
+//	char	*new_line;
 	char	*tmp;
 
+	c = '\0';
+	line = ft_strdup("");
+	while (read(map->fd, &c, 1) > 0)
+	{
+		tmp = line;
+		line = new_ft_strjoin(line, c);
+//		printf("%c", c);
+		free(tmp);
+	}
+	printf("%s", line);
+/*
 	new_line = ft_strdup("");
 	line = ft_strdup("");
-//	printf("%s", "checkpoint_gnl_1 \n");
 	while (line)
 	{
 		line = get_next_line(map->fd);
 		if (!line)
 			break ;
-//		printf("%s \n", line);
 		tmp = new_line;
 		new_line = ft_strjoin(new_line, line);
-//		printf("%s", "checkpoint_gnl_3 \n");
 		free(line);
 		free(tmp);
 	}
-//	free(line);
-//	free(tmp);
+	free(line);
 	close(map->fd);
-//	printf("%s", new_line);
 	return (new_line);
+ */
+	return (line);
 }
 
+char    *new_ft_strjoin(char const *s1, char s2)
+{
+	char    *str;
+	int     i;
+	i = 0;
+	str = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char) + 1);
+	if (!str || !s2)
+		return (NULL);
+	while (*s1)
+	{
+		str[i] = *s1;
+		i++;
+		s1++;
+	}
+	str[i] = s2;
+	i++;
+	str[i] = '\0';
+	return (str);
+}
