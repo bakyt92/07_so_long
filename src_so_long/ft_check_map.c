@@ -24,7 +24,7 @@ void	ft_check_symbols(t_map *map, char *str)
 		while (map->map[i][j])
 		{
 			if (!ft_strchr(str, map->map[i][j]))
-				ft_error("There are non-allowed symbols");
+				ft_error("There are non-allowed symbols\n");
 			j++;
 		}
 		i++;
@@ -41,7 +41,7 @@ void	ft_check_len(t_map *map)
 	while (map->map[rows])
 	{
 		if (len != ft_strlen(map->map[rows]))
-			ft_error("Map is not rectangular");
+			ft_error("Map is not rectangular\n");
 		rows++;
 	}
 }
@@ -56,7 +56,7 @@ void	ft_check_walls(t_map *map)
 	while (map->map[i][j])
 	{
 		if (map->map[i][j] != '1')
-			ft_error("The map is not surrounded by walls");
+			ft_error("The map is not surrounded by walls\n");
 		j++;
 	}
 	while (map->map[i])
@@ -64,13 +64,13 @@ void	ft_check_walls(t_map *map)
 		if (map->map[i][0] == '1' && map->map[i][map->length - 1] == '1')
 			i++;
 		else
-			ft_error("The map is not surrounded by walls");
+			ft_error("The map is not surrounded by walls\n");
 	}
 	j = 0;
 	while (map->map[map->height - 1][j])
 	{
 		if (map->map[map->height - 1][j] != '1')
-			ft_error("The map is not surrounded by walls");
+			ft_error("The map is not surrounded by walls\n");
 		j++;
 	}
 }
@@ -101,7 +101,7 @@ void	ft_check_pce(t_map *map, int p, int c, int e)
 		i++;
 	}
 	if (c < 1 || p < 1 || e < 1)
-		ft_error("Map does not contain player, collectibles or exit");
+		ft_error("Map does not contain player, collectibles or exit\n");
 }
 
 void	ft_check_map(t_map *map)
