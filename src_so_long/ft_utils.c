@@ -43,6 +43,9 @@ char	*ft_get_line(t_map *map)
 		line = ft_nouvel_strjoin(line, c);
 		free(tmp);
 	}
+	if (ft_strnstr(line, "\n\n", ft_strlen(line)) != NULL
+		|| line[0] == '\n')
+		ft_error("Empty line");
 	return (line);
 }
 
