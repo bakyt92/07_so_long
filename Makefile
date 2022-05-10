@@ -1,5 +1,7 @@
 NAME = so_long
 
+BONUS = so_long_bonus
+
 LIB = ./ft_libft/libft.a
 
 HEADER = so_long.h
@@ -17,11 +19,22 @@ SRC = so_long.c \
 		./src_so_long/ft_player_actions.c \
 		./src_so_long/ft_map_func1.c
 
+SRC = so_long_bonus.c \
+		./src_so_long_bonus/ft_error_bonus.c \
+		./src_so_long_bonus/ft_utils_bonus.c \
+		./src_so_long_bonus/ft_check_map_bonus.c \
+		./src_so_long_bonus/ft_push_sprites_bonus.c \
+		./src_so_long_bonus/ft_moves1_bonus.c \
+		./src_so_long_bonus/ft_player_actions_bonus.c \
+		./src_so_long_bonus/ft_map_func1_bonus.c
+
 OBJ = $(SRC:%.c= %.o)
+
+OBJ_BONUS = $(SRC_BONUS:%.c= %.o)
 
 MLX_LIB = -lmlx -framework OpenGL -framework AppKit
 
-.PHONY : all clean fclean re
+.PHONY : all bonus clean fclean re
 
 all : libft $(NAME)
 
@@ -35,13 +48,19 @@ $(NAME) : $(OBJ) $(HEADER)
 %.o	: %.c $(HEADER)
 	$(CC) $(FLAGS) -c $< -o $@
 
+bonus : libft $(BONUS)
+
+$(BONUS) : $(OBJ_BONUS) $(HEADER)
+	$(CC) $(FLAGS) -O2 $(OBJ_BONUS) $(LIB) -o $(NAME) $(MLX_LIB)
+
 clean	:
 	@rm -f $(OBJ)
+	@rm -f $(OBJ_BONUS)
 	@MAKE -C ./ft_libft/ clean
 
 fclean	:	clean
 	@$(RM) $(NAME)
-	@$(RM) $(NAME_B)
+	@$(RM) $(BONUS)
 	@MAKE -C ./ft_libft/ fclean
 
 re	:	fclean all
