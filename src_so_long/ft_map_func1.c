@@ -41,6 +41,7 @@ void	ft_push_image(t_map *map, int i, int j)
 		mlx_put_image_to_window(map->mlx, map->window, map->img.floor,
 			j * TILE_X, i * TILE_Y);
 	}
+
 	else if (map->map[i][j] == 'C')
 	{
 		mlx_put_image_to_window(map->mlx, map->window, map->img.floor,

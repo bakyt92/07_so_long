@@ -13,7 +13,7 @@ ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus
 ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 HEADER = libft.h
-OBJ = $(patsubst %.c, %.o, $(SRC))
+OBJ = $(SRC:%.c=%.o)
 B_OBJ = $(B_SRC:%.c=%.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I$(HEADER)
@@ -28,8 +28,11 @@ $(NAME) : $(OBJ) $(HEADER)
 %.o : %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus : $(B_OBJ) $(HEADER)
-	ar rcs $(NAME) $?
+#bonus : $(B_OBJ) $(HEADER)
+#bonus : $(B_OBJ)
+#	ar rcs $(NAME) $?
+bonus : $(B_OBJ)
+		@make OBJ='$(B_OBJ)' SRC='$(B_SRC)' all
 
 clean :
 	@rm -f $(OBJ) $(B_OBJ)

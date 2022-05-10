@@ -26,8 +26,13 @@
 # define WALL "game_assets/wall.xpm"
 # define FLOOR "game_assets/back.xpm"
 # define PLAYER "game_assets/player1.xpm"
+# define PLAYER1 "game_assets/player2.xpm"
+# define PLAYER2 "game_assets/player3.xpm"
 # define EXIT1 "game_assets/exit.xpm"
 # define COL1 "game_assets/blue_crystal_0000.xpm"
+# define COL2 "game_assets/blue_crystal_0001.xpm"
+# define COL3 "game_assets/blue_crystal_0002.xpm"
+# define COL4 "game_assets/blue_crystal_0003.xpm"
 
 typedef struct s_pl
 {
@@ -42,6 +47,8 @@ typedef struct s_image
 	void	*player;
 	void	*col1;
 	void	*col2;
+	void	*col3;
+	void	*col4;
 	void	*exit;
 }	t_image;
 
@@ -96,5 +103,9 @@ void	ft_player_move_up(t_map *map);
 void	ft_player_move_down(t_map *map);
 void	ft_player_move_left(t_map *map);
 void	ft_player_move_right(t_map *map);
+
+/* BONUS -> ft_animation.c */
+int		ft_animation(t_map *map);
+void	ft_print_collectibles(t_map *map, int collectibles);
 
 #endif

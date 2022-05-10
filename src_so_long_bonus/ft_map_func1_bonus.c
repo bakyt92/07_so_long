@@ -44,9 +44,9 @@ void	ft_push_image(t_map *map, int i, int j)
 	else if (map->map[i][j] == 'C')
 	{
 		mlx_put_image_to_window(map->mlx, map->window, map->img.floor,
-			j * TILE_X, i * TILE_Y);
+								j * TILE_X, i * TILE_Y);
 		mlx_put_image_to_window(map->mlx, map->window, map->img.col1,
-			j * TILE_X, i * TILE_Y);
+								j * TILE_X, i * TILE_Y);
 		map->col_num++;
 	}
 	else if (map->map[i][j] == 'E')
@@ -65,6 +65,7 @@ int	ft_print_map(t_map *map)
 	int	i;
 	int	j;
 
+	ft_animation(map);
 	i = 0;
 	map->col_num = 0;
 	while (map->map[i])
@@ -78,5 +79,6 @@ int	ft_print_map(t_map *map)
 		i++;
 	}
 	ft_push_player(map);
+	ft_print_steps(map);
 	return (0);
 }

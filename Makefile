@@ -19,14 +19,15 @@ SRC = so_long.c \
 		./src_so_long/ft_player_actions.c \
 		./src_so_long/ft_map_func1.c
 
-SRC = so_long_bonus.c \
+SRC_BONUS = so_long_bonus.c \
 		./src_so_long_bonus/ft_error_bonus.c \
 		./src_so_long_bonus/ft_utils_bonus.c \
 		./src_so_long_bonus/ft_check_map_bonus.c \
 		./src_so_long_bonus/ft_push_sprites_bonus.c \
 		./src_so_long_bonus/ft_moves1_bonus.c \
 		./src_so_long_bonus/ft_player_actions_bonus.c \
-		./src_so_long_bonus/ft_map_func1_bonus.c
+		./src_so_long_bonus/ft_map_func1_bonus.c \
+		./src_so_long_bonus/ft_animation_bonus.c
 
 OBJ = $(SRC:%.c= %.o)
 
@@ -51,7 +52,7 @@ $(NAME) : $(OBJ) $(HEADER)
 bonus : libft $(BONUS)
 
 $(BONUS) : $(OBJ_BONUS) $(HEADER)
-	$(CC) $(FLAGS) -O2 $(OBJ_BONUS) $(LIB) -o $(NAME) $(MLX_LIB)
+	$(CC) $(FLAGS) -O2 $(OBJ_BONUS) $(LIB) -o $(BONUS) $(MLX_LIB)
 
 clean	:
 	@rm -f $(OBJ)
